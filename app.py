@@ -1,35 +1,27 @@
 # Set Up the Flask Weather App
-
 # Import dependencies
 import datetime as dt
 import numpy as np
 import pandas as pd
-import json as jsonify
-
+# import json as jsonify
 # Import dependencies
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-
 # Set Up the Database
 engine = create_engine("sqlite:///hawaii.sqlite")
-
 # Reflect the database into classes
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 Measurement = Base.classes.measurement
 Station = Base.classes.station
-
 # Create a session link from Python to our database
 session = Session(engine)
-
 # Import the Flask Dependency
-from flask import Flask
-
+from flask import Flask, jsonify
 # Create a New Flask App Instance
 app = Flask(__name__)
-
 # Create Flask Routes
 @app.route('/')
 def welcome():
@@ -49,6 +41,7 @@ def precipitation():
     precipitation = session.query(Measurement.date, Measurement.prcp).\
         filter(Measurement.date >= prev_year).all()
     precip = {date: prcp for date, prcp in precipitation}
+    print(precip)
     return jsonify (precip)
 
 @app.route("/api/v1.0/stations")
