@@ -18,4 +18,4 @@ There are around 1,517 observations during the month of December indicating that
 ![December Temp](https://user-images.githubusercontent.com/94252681/162633667-ba35cfd5-dc1d-4325-9827-15b404654991.png)
 
 ## Summary
-From the charts, we can see that June and December are close in average, maximum, and minimum temperature. More importantly, the spread is about the same as the spread for the month of June.
+From the charts, we can see that June and December are close in average, maximum, and minimum temperature. More importantly, the spread is about the same as the spread for the month of June showing us that the proposed business is sustainable all year around in Ohau.
